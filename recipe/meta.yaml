@@ -22,10 +22,10 @@ requirements:
     - pip
     - python >=3.6.*
   run:
-    - pdfminer.six ==20200517
-    - pillow >=7.0.0
+    - pdfminer.six ==20211012
+    - pillow >=8.4
     - python >=3.6.*
-    - wand
+    - wand >=0.6.7
 
 test:
   imports:
