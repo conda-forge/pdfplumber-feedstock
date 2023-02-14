@@ -1,5 +1,5 @@
 {% set name = "pdfplumber" %}
-{% set version = "0.7.6" %}
+{% set version = "0.8.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pdfplumber-{{ version }}.tar.gz
-  sha256: a69bcc2a7eba5a2ca3171629dc33f1e08976175e98c8482d028fc6c3f644ec18
+  sha256: 3b7b7e02e6c18fc391fd163fd42be2ebae94e28d1d1c7db8a9f247de443e85e0
 
 build:
   number: 0
