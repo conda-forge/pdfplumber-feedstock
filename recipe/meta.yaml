@@ -36,6 +36,7 @@ test:
     - pdfplumber --help
   requires:
     - pip
+    - setuptools
 
 about:
   home: https://github.com/jsvine/pdfplumber
