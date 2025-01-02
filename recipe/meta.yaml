@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pdfplumber-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pdfplumber-{{ version }}.tar.gz
   sha256: 147b55cde2351fcb9523b46b09cc771eea3602faecfb60d463c6bf951694fbe8
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - pdfplumber = pdfplumber.cli:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -21,12 +21,12 @@ requirements:
   host:
     - pip
     - setuptools
-    - python >=3.6.*
+    - python {{ python_min }}
   run:
     - pdfminer.six ==20231228
     - pypdfium2
     - pillow >=9.1
-    - python >=3.6.*
+    - python >={{ python_min }}
     - wand >=0.6.10
 
 test:
@@ -38,6 +38,7 @@ test:
   requires:
     - pip
     - setuptools
+    - python {{ python_min }}
 
 about:
   home: https://github.com/jsvine/pdfplumber
