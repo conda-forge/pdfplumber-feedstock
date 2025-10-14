@@ -1,5 +1,5 @@
 {% set name = "pdfplumber" %}
-{% set version = "0.11.6" %}
+{% set version = "0.11.7" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pdfplumber-{{ version }}.tar.gz
-  sha256: d0f419e031641d9eac70dc18c60e1fc3ca2ec28cce7e149644923c030a0003ff
+  sha256: fa67773e5e599de1624255e9b75d1409297c5e1d7493b386ce63648637c67368
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - pdfplumber = pdfplumber.cli:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -23,7 +23,7 @@ requirements:
     - setuptools
     - python {{ python_min }}
   run:
-    - pdfminer.six ==20240706
+    - pdfminer.six ==20250506
     - pypdfium2
     - pillow >=9.1
     - python >={{ python_min }}
