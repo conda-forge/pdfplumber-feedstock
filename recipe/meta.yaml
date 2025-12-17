@@ -1,6 +1,5 @@
 {% set name = "pdfplumber" %}
-{% set version = "0.11.7" %}
-
+{% set version = "0.11.8" %}
 
 package:
   name: {{ name|lower }}
@@ -8,26 +7,25 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pdfplumber-{{ version }}.tar.gz
-  sha256: fa67773e5e599de1624255e9b75d1409297c5e1d7493b386ce63648637c67368
+  sha256: db29b04bc8bb62f39dd444533bcf2e0ba33584bd24f5a54644f3ba30f4f22d31
 
 build:
-  number: 0
   entry_points:
     - pdfplumber = pdfplumber.cli:main
-  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - pip
-    - setuptools
     - python {{ python_min }}
+    - pip
+    - setuptools <81.0
   run:
-    - pdfminer.six ==20250506
-    - pypdfium2
-    - pillow >=9.1
     - python >={{ python_min }}
-    - wand >=0.6.10
+    - pdfminer.six ==20251107
+    - pillow >=9.1
+    - pypdfium2 >=4.18.0
 
 test:
   imports:
@@ -37,7 +35,6 @@ test:
     - pdfplumber --help
   requires:
     - pip
-    - setuptools
     - python {{ python_min }}
 
 about:
@@ -48,4 +45,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - melonhead901
+    - rxm7706
