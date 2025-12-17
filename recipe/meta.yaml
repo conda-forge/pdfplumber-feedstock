@@ -32,10 +32,11 @@ test:
   imports:
     - pdfplumber
   commands:
-    - pip check
     - pdfplumber --help
+    - python -c "from importlib.metadata import version; v = version('pdfplumber'); print(v); assert v == '{{ version }}'"
   requires:
     - pip
+    - setuptools
     - python {{ python_min }}
 
 about:
