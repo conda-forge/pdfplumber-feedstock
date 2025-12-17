@@ -21,6 +21,7 @@ requirements:
     - python {{ python_min }}
     - pip
     - setuptools <81.0
+    - setuptools-scm
   run:
     - python >={{ python_min }}
     - pdfminer.six ==20251107
