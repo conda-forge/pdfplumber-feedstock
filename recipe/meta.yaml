@@ -14,7 +14,7 @@ build:
     - pdfplumber = pdfplumber.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -24,7 +24,7 @@ requirements:
     - setuptools-scm
   run:
     - python >={{ python_min }}
-    - pdfminer.six ==20251107
+    - pdfminer.six ==20251230
     - pillow >=9.1
     - pypdfium2 >=4.18.0
 
