@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.11.10"
+  version: 0.11.11
 
 package:
   name: pdfplumber
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pdfplumber/pdfplumber-${{ version }}.tar.gz
-  sha256: b95b2d28c66efb0a794a83b88c6c6aea5987532a445d20a1cbcfa657022e6e57
+  sha256: e38eb7d3a4c822f93067cf6694dcec655f032619f4bd41ebd34f882fc22fbb87
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -29,9 +29,8 @@ requirements:
   run:
     - python >=${{ python_min }}
     - pdfminer.six ==20260107
-    - pillow >=12.2.0
-    - pypdfium2 >=5.9.0
-
+    - pillow >=13.0.0
+    - pypdfium2 >=5.15.2
 tests:
   - python:
       imports:
@@ -39,7 +38,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - "*"
+        - '*'
   - requirements:
       run:
         - pip
